@@ -1,0 +1,35 @@
+//list of all template
+dotnet new -l
+//creating a solution file
+dotnet new sln
+//creating a api project
+dotnet new webapi -o API
+//add project into solution
+dotnet sln add API
+//extension to be installed
+C#
+C# extention
+Bracket pair
+nuget
+material Icon
+auto rename tag
+//generate asset for build and debug to bring .vscode for debugging application (show all command)
+// use path if vscode not opening code . (show all command)
+//install from nuget
+microsoft.entityframeworkcore.sqlite
+microsoft.entityframeworkcore.design
+//install separately after downloading from google nuget
+dotnet tool install --global dotnet-ef --version 6.0.3
+// to see any dotnet tool already installed
+dotnet tool list -g
+// to update the tool
+dotnet tool update --global dotnet-ef --version 6.0.3
+//to see all operation what we can achive with dotnet ef tool
+dotnet ef
+// start first migration in Data/migration directory
+dotnet ef migrations add InitialCreate -o Data/Migrations
+//update the database with migration
+dotnet ef database update
+dotnet ef database drop
+//add dotnet gitignore
+dotnet new gitignore
