@@ -1,0 +1,7 @@
+//create react application without install it globally with typescript and npm
+npx create-react-app client --template typescript --use-npm
+//() means return other wise {return }
+//to use map function specify a key with unique value
+//install material UI
+npm install @mui/material @emotion/react @emotion/styled
+//also add icon and font
