@@ -5,3 +5,7 @@ npx create-react-app client --template typescript --use-npm
 //install material UI
 npm install @mui/material @emotion/react @emotion/styled
 //also add icon and font
+//install React-Router
+npm install react-router-dom@5.3.0 @types/react-router-dom@5.3.2
+//install axios
+npm install axios
