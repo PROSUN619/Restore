@@ -9,3 +9,8 @@ npm install @mui/material @emotion/react @emotion/styled
 npm install react-router-dom@5.3.0 @types/react-router-dom@5.3.2
 //install axios
 npm install axios
+//install toast
+npm install react-toastify
+//use this router dom to avoid unknown error
+npm install react-router-dom@5.2.0 @types/react-router-dom@5.1.8 @types/history@4.7.9 history@4.10.1
+// to debug react app in vs code add configuration to launchsettings.json

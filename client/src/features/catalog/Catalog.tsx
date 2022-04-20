@@ -1,5 +1,7 @@
 import { Button } from "@mui/material"
 import { useEffect, useState } from "react";
+import agent from "../../app/api/agent";
+import LoadingComponent from "../../app/layout/LoadingComponent";
 import { Product } from "../../models/Product"
 import ProductList from "./ProductList"
 
@@ -14,16 +16,20 @@ import ProductList from "./ProductList"
 export default function () {
     //use react hooks
     const [products, setProducts] = useState<Product[]>([]);
+    const [loading, setLoading] = useState(true);
+
 
     //use another react hooks useeffect
     //useeffect called when react component mounted
     useEffect(() => {
-        fetch('http://localhost:5000/api/products')
-            .then(response => response.json())
-            .then(data => setProducts(data))
+        agent.Catalog.list()
+        .then(products => setProducts(products))
+        .catch(error => console.log(error))
+        .finally(() => setLoading(false))
     }, []); // use [] to add dependancy  so that when component re render useeffect will not be called
     //any time our state change then component re render and update the state
 
+    if (loading) return <LoadingComponent message="Catalog Loading..."/>
 
     return (
         <>
