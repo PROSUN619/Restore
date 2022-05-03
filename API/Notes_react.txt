@@ -14,3 +14,11 @@ npm install react-toastify
 //use this router dom to avoid unknown error
 npm install react-router-dom@5.2.0 @types/react-router-dom@5.1.8 @types/history@4.7.9 history@4.10.1
 // to debug react app in vs code add configuration to launchsettings.json
+// to install loading button  we have to install lab
+npm install @mui/lab
+//? optional chaining indicates that if not null | null exception
+//! used to to force and override type safety
+const subtotal = basket?.items.reduce((sum,item) => sum + (item.quantity*item.price), 0) ?? 0;
+// ?? means if left side is null or undefined then execute right side
+
+

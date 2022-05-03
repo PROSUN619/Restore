@@ -28,6 +28,10 @@ dotnet tool update --global dotnet-ef --version 6.0.3
 dotnet ef
 // start first migration in Data/migration directory
 dotnet ef migrations add InitialCreate -o Data/Migrations
+//then
+dotnet ef migrations add BasketEntityAdded
+//remove migration
+dotnet ef migrations remove
 //update the database with migration
 dotnet ef database update
 dotnet ef database drop

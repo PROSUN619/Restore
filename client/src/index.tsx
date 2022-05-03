@@ -5,6 +5,7 @@ import App from './app/layout/App';
 import reportWebVitals from './reportWebVitals';
 import { BrowserRouter, Router } from 'react-router-dom';
 import { createBrowserHistory } from "history";
+import { StoreContext, StoreProvider } from './app/context/StoreContext';
 
 /*
 Instead of using browser router we are using router so that we can use route from non react element
@@ -16,7 +17,9 @@ export const history = createBrowserHistory();
 ReactDOM.render(
   <React.StrictMode>
     <Router history={history}>
+      <StoreProvider>
       <App />
+      </StoreProvider>
     </Router>
   </React.StrictMode>,
   document.getElementById('root')
