@@ -22,6 +22,7 @@ export function StoreProvider({children}:PropsWithChildren<any>){
     const [basket,setBasket] = useState<Basket | null>(null);
 
     function removeItem(productId:number, quantiry: number){
+        debugger;
         if (!basket) return;
         const items = [...basket.items]; //creating new instance of basket item as react recommend that do not mutate
         //original array

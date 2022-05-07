@@ -43,6 +43,7 @@ export default function ProductDetails() {
 
     function handleUpdateCart() {
         setSubmitting(true);
+        debugger;
         if (!item || quantity > item.quantity) {
             const updatedQuantity = item ? quantity - item.quantity : quantity;
             agent.Basket.addItem(product?.id!, updatedQuantity)

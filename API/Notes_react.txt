@@ -20,5 +20,8 @@ npm install @mui/lab
 //! used to to force and override type safety
 const subtotal = basket?.items.reduce((sum,item) => sum + (item.quantity*item.price), 0) ?? 0;
 // ?? means if left side is null or undefined then execute right side
+//install redux and toolkit
+npm install redux react-redux
+
 
 
