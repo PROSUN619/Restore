@@ -6,14 +6,15 @@ import reportWebVitals from './reportWebVitals';
 import { BrowserRouter, Router } from 'react-router-dom';
 import { createBrowserHistory } from "history";
 import { StoreContext, StoreProvider } from './app/context/StoreContext';
-import { configureStore } from './app/store/configureStore';
+// import { configureStore } from './app/store/configureStore';
 import { Provider } from 'react-redux';
+import { store } from './app/store/configureStore';
 
 /*
 Instead of using browser router we are using router so that we can use route from non react element
 
 */ 
-const store = configureStore();
+// const store = configureStore();
 
 export const history = createBrowserHistory();
 

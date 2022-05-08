@@ -3,9 +3,9 @@
 export const INCREMENT_COUNTER = "INCREMENT_COUNTER"
 export const DECREMENT_COUNTER = "DECREMENT_COUNTER"
 
-//CREATE ACTION
+// end CREATE ACTION
 
-//create react reducers
+//create  intitial state
 export interface CounterState {
     data: number,
     title: string
@@ -16,7 +16,7 @@ const initialState: CounterState = {
     title: 'YARC (yet aother react counter)'
 }
 
-//create action creater to despatch our action to redux store
+//create initial state
 
 export function increment(amount = 1){
     return {
@@ -32,7 +32,7 @@ export function decrement(amount = 1){
     }
 }
 
-// end create action creater to despatch our action to redux store
+// end create initial state
 
 //reducer/slice function
 export default function counterReducer(state = initialState, action: any) {

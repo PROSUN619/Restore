@@ -5,6 +5,8 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import agent from "../../app/api/agent";
 import { useStoreContext } from "../../app/context/StoreContext";
+import { useAppDispatch, useAppSelector } from "../../app/store/configureStore";
+import { removeItem, setBasket } from "./basketSlice";
 import BasketSummary from "./basketSummary";
 
 export default function BasketPage() {
@@ -22,9 +24,13 @@ export default function BasketPage() {
     //add [] dependancy that means basket will only be loaded for the first time
     if (loading) return <LoadingComponent message="Loading Basket..." />
     */
-    const { basket, setBasket, removeItem } = useStoreContext();
+   // const { basket, setBasket, removeItem } = useStoreContext();
     // const [loading, setLoading] = useState(false);
     // to make loading flag unique
+
+    const {basket} = useAppSelector(state => state.basket);
+    const dispatch = useAppDispatch();
+
     const [status, setStatus] = useState({
         loading: false,
         name: ''
@@ -33,7 +39,7 @@ export default function BasketPage() {
     function handleAddItem(productId: number, name: string) {
         setStatus({ loading: true, name: name });
         agent.Basket.addItem(productId)
-            .then(basket => setBasket(basket))
+            .then(basket => dispatch(setBasket(basket)))
             .catch(error => console.log(error))
             .finally(() => setStatus({ loading: false, name: '' }))
     }
@@ -41,7 +47,7 @@ export default function BasketPage() {
     function handleRemoveItem(productId: number, quantiry = 1, name: string) {
         setStatus({ loading: true, name: name });
         agent.Basket.removeItem(productId, quantiry)
-            .then(basket => removeItem(productId, quantiry))
+            .then(() => dispatch(removeItem({productId, quantiry})))
             .catch(error => console.log(error))
             .finally(() => setStatus({ loading: false, name: '' }))
     }

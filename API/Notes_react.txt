@@ -22,6 +22,8 @@ const subtotal = basket?.items.reduce((sum,item) => sum + (item.quantity*item.pr
 // ?? means if left side is null or undefined then execute right side
 //install redux and toolkit
 npm install redux react-redux
+//install redux toolkit
+npm install @reduxjs/toolkit
 
 
 
