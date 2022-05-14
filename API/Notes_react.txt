@@ -24,6 +24,7 @@ const subtotal = basket?.items.reduce((sum,item) => sum + (item.quantity*item.pr
 npm install redux react-redux
 //install redux toolkit
 npm install @reduxjs/toolkit
+// productsAdapter is used nomalization to prevent loading in every page => catalogslice.ts
 
 
 
