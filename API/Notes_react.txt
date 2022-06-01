@@ -25,6 +25,8 @@ npm install redux react-redux
 //install redux toolkit
 npm install @reduxjs/toolkit
 // productsAdapter is used nomalization to prevent loading in every page => catalogslice.ts
-
+ //above value getting replaced inside productParam by action.payload
+state.productParam = {...state.productParam, ...action.payload}            
+//use skeleton from mui to add skeleton effect on list loading
 
 

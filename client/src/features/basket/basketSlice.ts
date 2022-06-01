@@ -45,7 +45,7 @@ export const basketSlice = createSlice({
     initialState,
     reducers: {
         setBasket: (state, action) => {
-            console.log('item added');
+            //console.log('item added');
             state.basket = action.payload
         }
     },
